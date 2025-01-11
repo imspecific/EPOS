@@ -10,21 +10,19 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name="epos_user")
+@Table(name = "epos_user")
 public class User {
 
-	@Id
-	@GeneratedValue
-	private Long userId;
-	
-	@Column(name = "user_name")
-	private String userName;
-	
-	@Column(name = "user_password")
-	private String userPassword;
-	
-	private String eName;
-	private String eDomain;
+    @Id
+    @GeneratedValue
+    private Long userId;
 
+    @Column(name = "user_name")
+    private String userName;
 
+    @Column(name = "user_password")
+    private String userPassword;
+
+    private String eName;
+    private String eDomain;
 }

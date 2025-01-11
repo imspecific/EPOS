@@ -7,16 +7,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
-//@Entity
-//@Table(name="epos_transferdetails")
+@Entity
+@Table(name = "epos_transferdetails")
 public class TransferDetails {
 
-	@Id
-	private String transferId;
-	
-	private String productId;
-	private long quantity;
-	private long pendingQuantity;
-	private long recordQuantity;
-	
+    @Id
+    private String transferId;
+
+    private String productId;
+    private long quantity;
+    private long pendingQuantity;
+    private long recordQuantity;
+
 }

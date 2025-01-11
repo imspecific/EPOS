@@ -7,13 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
-//@Entity
-//@Table(name="epos_stock")
+@Entity
+@Table(name = "epos_stock")
 public class Stock {
 
-	@Id
-	private String storeId;
-	private String productId;
-	private long quantity;
-	private int minQuantity;
+    @Id
+    private String storeId;
+    private String productId;
+    private long quantity;
+    private int minQuantity;
 }

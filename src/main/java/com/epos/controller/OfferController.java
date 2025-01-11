@@ -1,7 +1,6 @@
 package com.epos.controller;
 
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class OfferController {
 
-	@RequestMapping(value = "/addoffer", method = RequestMethod.GET)
-	public ModelAndView addProductView(Model model) { 
-		
-		return new ModelAndView("addoffer");    
-	}
+    @RequestMapping(value = "/addoffer", method = RequestMethod.GET)
+    public ModelAndView addProductView(Model model) {
+
+        return new ModelAndView("addoffer");
+    }
 }

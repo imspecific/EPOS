@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
-//@Entity
-//@Table(name="epos_purchase")
+@Entity
+@Table(name="epos_purchase")
 public class Purchase {
 
 	@Id

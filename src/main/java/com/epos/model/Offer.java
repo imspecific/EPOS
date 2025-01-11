@@ -12,10 +12,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Data
-//@Entity
-//@Table(name="epos_offer")
+@Entity
+@Table(name="epos_offer")
 public class Offer {
-
 	@Id
 	private Long offerId;
 	

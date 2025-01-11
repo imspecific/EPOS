@@ -9,8 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ProfitAndLossController {
 
-	@RequestMapping(value = "/profitlossreport", method = RequestMethod.GET)
-	public ModelAndView profitAndLossReportView(Model model) { 
-		return new ModelAndView("profitlossreport");    
-	}
+    @RequestMapping(value = "/profitlossreport", method = RequestMethod.GET)
+    public ModelAndView profitAndLossReportView(Model model) {
+        return new ModelAndView("profitlossreport");
+    }
 }

@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
-//@Entity
-//@Table(name="epos_excahnge")
+@Entity
+@Table(name="epos_excahnge")
 public class Exchange {
 
 	@Id

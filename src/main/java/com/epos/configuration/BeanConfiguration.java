@@ -9,7 +9,7 @@ public class BeanConfiguration {
     @Bean
     public InternalResourceViewResolver setupResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/views/"); //  /WEB-INF/views/___.jsp
+        resolver.setPrefix("/WEB-INF/views/"); //  /WEB-INF/views/*.jsp
         resolver.setSuffix(".jsp");
         return resolver;
     }

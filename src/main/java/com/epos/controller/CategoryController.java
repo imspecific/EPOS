@@ -16,25 +16,25 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CategoryController {
 
-	@Autowired
-	private CategoryService categoryService;
-	
-	@RequestMapping(value = "/addcategory", method = RequestMethod.GET)
-	public ModelAndView addCategoryView(@ModelAttribute("category") Category category, Model model) {
-		return new ModelAndView("/addcategory");    
-	}
-	
-	@RequestMapping(value = "/addcategory", method = RequestMethod.POST)
-	public String adCategory(@RequestParam("prod_Category") String prod_Category, @RequestParam("prod_Brand") String prod_Brand) {
-		try {
-			categoryService.save(new Category(prod_Category, prod_Brand));
-			System.out.println("Category added succussfully.");
-			return "/addcategory";
-			
-		} catch(Exception e) {
-			System.out.println("Category added failed.");
-			return "/addcategory";
-		}
-	}
+    @Autowired
+    private CategoryService categoryService;
+
+    @RequestMapping(value = "/addcategory", method = RequestMethod.GET)
+    public ModelAndView addCategoryView(@ModelAttribute("category") Category category, Model model) {
+        return new ModelAndView("/addcategory");
+    }
+
+    @RequestMapping(value = "/addcategory", method = RequestMethod.POST)
+    public String adCategory(@RequestParam("prod_Category") String prod_Category, @RequestParam("prod_Brand") String prod_Brand) {
+        try {
+            categoryService.save(new Category(prod_Category, prod_Brand));
+            System.out.println("Category added succussfully.");
+            return "/addcategory";
+
+        } catch (Exception e) {
+            System.out.println("Category added failed.");
+            return "/addcategory";
+        }
+    }
 
 }

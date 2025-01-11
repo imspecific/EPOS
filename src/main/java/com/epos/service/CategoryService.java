@@ -22,7 +22,7 @@ public class CategoryService implements CategoryRepo {
     @Override
     public int save(Category category) {
         return jdbctemplate.update("INSERT INTO epos_category (prod_category, prod_brand) VALUES (?, ?)",
-                new Object[]{category.getProdCategory(), category.getProdBrand()});
+                new Object[]{category.getProductCategory(), category.getProductBrand()});
 
     }
 
@@ -36,8 +36,8 @@ public class CategoryService implements CategoryRepo {
                 List<Category> categoryList = new ArrayList<>();
                 while (rs.next()) {
                     Category category = new Category();
-                    category.setProdCategory(rs.getString(1));
-                    category.setProdBrand((rs.getString(2)));
+                    category.setProductCategory(rs.getString(1));
+                    category.setProductBrand((rs.getString(2)));
                     categoryList.add(category);
                 }
                 return categoryList;
