@@ -168,6 +168,9 @@
       <div class="header">
          <a href="#" class="logo"> EPOS </a>
          <div class="header-right">
+         <%
+            String userName = String.valueOf(session.getAttribute("userName"));
+         %>
             <a class="#" href="#"> Welcome ${userName} </a>
             <a href="/login"> Logout </a>
          </div>

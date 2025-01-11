@@ -210,10 +210,10 @@
 		    		<h2> Add Category </tr>
 		    	</tr>
 				<tr>
-					<td>Category	<input type="text" name="prod_Category"></td>
+					<td>Category	<input type="text" name="productCategory"></td>
 		    	</tr>
 				<tr>
-			    	<td>Brand	<input type="text" name="prod_Brand"></td>
+			    	<td>Brand	<input type="text" name="productBrand"></td>
 		    	</tr>
 				<tr>
 		    		<td><input type="submit" value="Add"/> &nbsp;&nbsp; <input type="submit" value="Cancel"/></td>

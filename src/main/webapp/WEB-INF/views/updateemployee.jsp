@@ -211,7 +211,7 @@
 					<td> Search By: </td> <td>ID: <select name="employees" id="empList">
 													<option value="0" > Select </option>													
 													<c:forEach var="emp" items="${empList}">
-								        				<option><c:set var="emp1" value="${emp}"/><c:out value="${emp1.e_Id }"/></option>
+								        				<option><c:set var="emp1" value="${emp}"/><c:out value="${emp1.employeeId }"/></option>
 								    				</c:forEach>
 			    								  </select></td>
 				</tr>
@@ -225,16 +225,16 @@
 			<form:form method="post" action="/updateemployee">
 			<table class = "table1">
 				<tr>
-						<td> Employee Id: </td> <td> <input type="text" name="e_Id" id="e_Id" disabled></td>
-						<td> Name: </td> <td> <input type="text" name="e_Name" id="e_Name"></td>
+						<td> Employee Id: </td> <td> <input type="text" name="employeeId" id="employeeId" disabled></td>
+						<td> Name: </td> <td> <input type="text" name="employeeName" id="employeeName"></td>
 				</tr>
 				<tr>
-						<td> Contact No: </td> <td> <input type="number" name="e_Phone" id="e_Phone"></td>
-						<td> Email:	</td> <td> <input type="email" name="e_Email" id="e_Email"></td>
+						<td> Contact No: </td> <td> <input type="number" name="employeePhone" id="employeePhone"></td>
+						<td> Email:	</td> <td> <input type="email" name="employeeEmail" id="employeeEmail"></td>
 				</tr>
 				<tr>
-						<td> Address: </td> <td> <input type="text" name="e_Address" id="e_Address"></td>
-						<td> Country: </td> <td> <select name="e_Country" id="e_Country">
+						<td> Address: </td> <td> <input type="text" name="employeeAddress" id="employeeAddress"></td>
+						<td> Country: </td> <td> <select name="employeeCountry" id="employeeCountry">
 						    				   <option value="select">Select</option>
 					    				   			<option value="ind">India</option>
 					    				   			<option value="us">USA</option>
@@ -242,17 +242,17 @@
 				    					</select></td>
 				  </tr>
 				  <tr>
-				    	<td> Domain: </td> <td> <input type="text" name="e_Doamin" id="e_Domain"></td>
-				    	<td> Store ID: </td> <td> <select name="store_Id" id="store_Id">
+				    	<td> Domain: </td> <td> <input type="text" name="employeeDomain" id="employeeDomain"></td>
+				    	<td> Store ID: </td> <td> <select name="storeId" id="storeId">
 					    				 		<option value="0"> Select </option>													
 												<c:forEach var="store" items="${storeList}">
-								        			<option><c:set var="store1" value="${store}"/><c:out value="${store1.store_Id }"/></option>
+								        			<option><c:set var="store1" value="${store}"/><c:out value="${store1.storeId }"/></option>
 								    			</c:forEach>
 			    							 </select></td>
 				   </tr>
 				   <tr> 					
-				    	<td> Date of Birth: </td> <td> <input type="date" id="birth" name="e_DOB" id="e_DOB"></td>
-				    	<td> Date of Joining: </td> <td> <input type="date" id="join" name="e_DOJ" id="e_DOJ"></td>
+				    	<td> Date of Birth: </td> <td> <input type="date" id="birth" name="employeeDOB" id="employeeDOB"></td>
+				    	<td> Date of Joining: </td> <td> <input type="date" id="join" name="employeeDOJ" id="employeeDOJ"></td>
 				   </tr>
 				   <tr>
 				    	<td colspan="4"><input type="submit" value="Save"/> &nbsp;&nbsp; <input type="submit" value="Cancel"/></td>
@@ -280,18 +280,18 @@
          
          $('#search').click(function () {  
  	        var url = "/updateemployee";  
- 	        var e_Id = $('#empList1').val();  
- 	        $.get(url, { input: e_Id }, function (emp) {  
- 	            $("#e_Id").html(emp);
- 	            $("#e_Name").html(emp.e_Name);
- 	            $("#e_Phone").html(emp.e_Phone);
- 	            $("#e_Email").html(emp.e_Email);
- 	            $("#e_Address").html(emp.e_Address);
- 	            $("#e_Country").html(emp.e_Country);
- 	            $("#e_Domain").html(emp.e_Domain);
- 	            $("#e_Store").html(emp.e_Store);
- 	            $("#e_DOB").html(emp.e_DOB);
- 	            $("#e_DOJ").html(emp.e_DOJ);
+ 	        var employeeId = $('#empList1').val();
+ 	        $.get(url, { input: employeeId }, function (emp) {
+ 	            $("#employeeId").html(emp);
+ 	            $("#employeeName").html(emp.employeeName);
+ 	            $("#employeePhone").html(emp.employeePhone);
+ 	            $("#employeeEmail").html(emp.employeeEmail);
+ 	            $("#employeeAddress").html(emp.employeeAddress);
+ 	            $("#employeeCountry").html(emp.employeeCountry);
+ 	            $("#employeeDomain").html(emp.employeeDomain);
+ 	            $("#employeeStore").html(emp.employeeStore);
+ 	            $("#employeeDOB").html(emp.employeeDOB);
+ 	            $("#employeeDOJ").html(emp.employeeDOJ);
  	        });  
  	    })  	    
 	  </script>      

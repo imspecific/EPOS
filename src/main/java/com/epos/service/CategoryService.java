@@ -20,9 +20,9 @@ public class CategoryService implements CategoryRepo {
     private JdbcTemplate jdbctemplate;
 
     @Override
-    public int save(Category category) {
-        return jdbctemplate.update("INSERT INTO epos_category (prod_category, prod_brand) VALUES (?, ?)",
-                new Object[]{category.getProductCategory(), category.getProductBrand()});
+    public int save(String productCategory, String productBrand) {
+        return jdbctemplate.update("INSERT INTO epos_category (product_category, product_brand) VALUES (?,?)",
+                productCategory, productBrand);
 
     }
 

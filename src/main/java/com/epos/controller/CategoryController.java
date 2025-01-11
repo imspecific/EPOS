@@ -3,6 +3,7 @@ package com.epos.controller;
 
 import com.epos.model.Category;
 import com.epos.service.CategoryService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
+@Slf4j
 @Controller
 public class CategoryController {
 
@@ -25,16 +26,20 @@ public class CategoryController {
     }
 
     @RequestMapping(value = "/addcategory", method = RequestMethod.POST)
-    public String adCategory(@RequestParam("prod_Category") String prod_Category, @RequestParam("prod_Brand") String prod_Brand) {
+    public String adCategory(@RequestParam("productCategory") String productCategory,
+                             @RequestParam("productBrand") String productBrand) {
         try {
-            categoryService.save(new Category(prod_Category, prod_Brand));
-            System.out.println("Category added succussfully.");
+            if (productCategory == null || productCategory.isEmpty() ||
+                    productBrand == null || productBrand.isEmpty()) {
+                log.warn("Invalid input: productCategory or productBrand is empty.");
+                return "/addcategory";
+            }
+            categoryService.save(productCategory, productBrand);
+            log.info("Category added successfully.");
             return "/addcategory";
-
         } catch (Exception e) {
-            System.out.println("Category added failed.");
+            log.error("Category added failed.", e);
             return "/addcategory";
         }
     }
-
 }

@@ -239,26 +239,26 @@
             <tr>
                <td>Search By</td>
                <td>
-                  <input type="radio" id="store_Id" name="searchby" value="Store Id">
+                  <input type="radio" id="storeId" name="searchby" value="Store Id">
                   <label for="storeid">Store Id</label>
                </td>
                <td>
                   <select name="storeId" id="storeId">
 					    <option value="0"> Select </option>													
 					    <c:forEach var="store" items="${storeList}">
-							<option><c:set var="store1" value="${store}"/><c:out value="${store1.store_Id }"/></option>
+							<option><c:set var="store1" value="${store}"/><c:out value="${store1.storeId }"/></option>
 						</c:forEach>
 			    	</select>
                </td>
                <td>
-                  <input type="radio" id="store_Name" name="searchby" value="Store Name">
+                  <input type="radio" id="storeName" name="searchby" value="Store Name">
                   <label for="storename">Store Name</label>
                </td>
                <td>
                   <select name="storeName" id="storeName">
 					    <option value="0"> Select </option>													
 					    <c:forEach var="store" items="${storeList}">
-							<option><c:set var="store1" value="${store}"/><c:out value="${store1.store_Name }"/></option>
+							<option><c:set var="store1" value="${store}"/><c:out value="${store1.storeName }"/></option>
 						</c:forEach>
 			    	</select>
                </td>
@@ -272,17 +272,17 @@
             <tr>
                <td>Store Id </td>
                <td>
-                  <input type="text" name="store_Id" disabled>
+                  <input type="text" name="storeId" disabled>
                </td>
                <td> Name </td>
                <td>
-                  <input type="text" name="store_Name">
+                  <input type="text" name="storeName">
                </td>
             </tr>
             <tr>
                <td>Phone No. </td>
                <td>
-                  <input type="number" name="store_Phone">
+                  <input type="number" name="storePhone">
                </td>
                
                   <td>Address 	</td><td colspan="2"> <textarea name="address" rows="2" cols="20"></textarea></td>
@@ -291,7 +291,7 @@
             <tr>
                <td>Email </td>
                <td>
-                  <input type="email" name="store_Email">
+                  <input type="email" name="storeEmail">
                </td>
             </tr>
             <tr>

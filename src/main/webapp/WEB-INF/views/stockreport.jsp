@@ -209,10 +209,10 @@
 				<tr>
 					<td colspan="2">Store Id:</td> 
 					<td colspan="7">
-						<select name="store_Id" id="storeId">
+						<select name="storeId" id="storeId">
 					    	<option value="0"> Select </option>													
 							<c:forEach var="store" items="${storeList}">
-								 <option><c:set var="store1" value="${store}"/><c:out value="${store1.store_Id }"/></option>
+								 <option><c:set var="store1" value="${store}"/><c:out value="${store1.storeId }"/></option>
 							</c:forEach>
 			    		</select>
                   	</td>

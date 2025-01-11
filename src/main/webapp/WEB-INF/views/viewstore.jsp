@@ -249,11 +249,11 @@
 		    	</tr>
 		    	<c:forEach items="${storeList}" var="store">
 			    	<tr>
-			    		<td><c:out value="${store.store_Id}"/></td>
-					    <td><c:out value="${store.store_Name}"/></td>
-					    <td><c:out value="${store.store_Add}"/></td>
-					    <td><c:out value="${store.store_Email}"/></td>
-					    <td><c:out value="${store.store_Phone}"/></td>
+			    		<td><c:out value="${store.storeId}"/></td>
+					    <td><c:out value="${store.storeName}"/></td>
+					    <td><c:out value="${store.storeAddress}"/></td>
+					    <td><c:out value="${store.storeEmail}"/></td>
+					    <td><c:out value="${store.storePhone}"/></td>
 			    	</tr>
 		    	</c:forEach>
 		    	<tr>

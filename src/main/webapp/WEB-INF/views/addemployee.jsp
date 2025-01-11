@@ -173,6 +173,9 @@
 	<body>
 		<div class="header">
 	         <a href="#" class="logo">EPOS</a>
+	         <%
+                String userName = String.valueOf(session.getAttribute("userName"));
+             %>
 	         <div class="header-right">
 	            <a class="#" href="#">Welcome ${userName}</a>
 	            <a href="login">Logout</a>
@@ -207,16 +210,16 @@
 				<h3>Add New Employee</h3>
 			</tr>
 			<tr>
-					<td> Employee Id: </td> <td> <input type="text" name="e_Id" placeholder="Auto Generated" disabled> </td>
-					<td> Name: </td> <td> <input type="text" name="e_Name"> </td>
+					<td> Employee Id: </td> <td> <input type="text" name="employeeId" placeholder="Auto Generated" disabled> </td>
+					<td> Name: </td> <td> <input type="text" name="employeeName"> </td>
 			</tr>
 			<tr>
-					<td> Contact No: </td> <td> <input type="text" name="e_Phone"></td>
-					<td> Email:	</td> <td> <input type="email" name="e_Email"></td>
+					<td> Contact No: </td> <td> <input type="text" name="employeePhone"></td>
+					<td> Email:	</td> <td> <input type="email" name="employeeEmail"></td>
 			</tr>
 			<tr>
-					<td> Address: </td> <td> <input type="text" name="e_Address"></td>
-					<td> Country: </td> <td> 	<select name="e_Country" id="user">
+					<td> Address: </td> <td> <input type="text" name="employeeAddress"></td>
+					<td> Country: </td> <td> 	<select name="employeeCountry" id="user">
 					    				   			<option value="select">Select</option>
 					    				   			<option value="IND">India</option>
 					    				   			<option value="USA">USA</option>
@@ -224,20 +227,20 @@
 			    								</select></td>
 			  </tr>
 			  <tr>
-			    	<td> Domain: </td> <td> <input type="text" name="e_Doamin"></td>
-			    	<td> Store ID: </td> <td> <select name="store_Id" id="user">
+			    	<td> Domain: </td> <td> <input type="text" name="employeeDomain"></td>
+			    	<td> Store ID: </td> <td> <select name="storeId" id="user">
 					    				 		<option value="0"> Select </option>													
 												<c:forEach var="store" items="${storeList}">
-								        			<option><c:set var="store1" value="${store}"/><c:out value="${store1.store_Id }"/></option>
+								        			<option><c:set var="store1" value="${store}"/><c:out value="${store1.storeId }"/></option>
 								    			</c:forEach>
 			    							 </select></td>
 			   </tr>
 			   <tr> 					
-			    	<td> Date of Birth: </td> <td> <input type="date" id="birth" name="e_DOB"></td>
-			    	<td> Date of Joining: </td> <td> <input type="date" id="join" name="e_DOJ"></td>
+			    	<td> Date of Birth: </td> <td> <input type="date" id="birth" name="employeeDOB"></td>
+			    	<td> Date of Joining: </td> <td> <input type="date" id="join" name="employeeDOJ"></td>
 			   </tr>
 			   <tr>
-			    	<td colspan="4"><input type="submit" value="Save" onsubmit="javascript:alert('success');"/> &nbsp;&nbsp; <input type="submit" value="Cancel"/></td>
+			    	<td colspan="4"><input type="submit" value="Save" onsubmit="success()"/> &nbsp;&nbsp; <input type="submit" value="Cancel"/></td>
 			    </tr>	    	
 	    </table> 
 	</div>
@@ -256,6 +259,9 @@
                   dropdownContent.style.display = "block";
                }
             });
+         }
+         function success() {
+           alert("Login successful.");
          }
       </script> 
 	</body>

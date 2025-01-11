@@ -222,29 +222,29 @@
 			</tr>
 			<tr>
 					 <td><input type="radio" id="productid" name="purchasereport" value="Product Id">
-					  		<label for="productid"> Product Id </label>
-							  <select name="prod_Id" id="prod_Id">
+					ï¿½ 		<label for="productid"> Product Id </label>
+							  <select name="productId" id="productId">
 			                     <option value="0"> Select </option>													
 								 <c:forEach var="prod" items="${prodList}">
-									<option><c:set var="prod1" value="${prod}"/><c:out value="${prod.prod_Id }"/></option>
+									<option><c:set var="prod1" value="${prod}"/><c:out value="${prod.productId }"/></option>
 								 </c:forEach>
 			                 </select>  
 					 </td>
 					 <td><input type="radio" id="category" name="purchasereport" value="Category">
-					  		<label for="category"> Category </label>
-							 <select name="category.prod_Category" id="pordcategory">
+					ï¿½ 		<label for="category"> Category </label>
+							 <select name="category.productCategory" id="pordcategory">
 			                     <option value="select"> Select </option>													
 								 <c:forEach var="cat" items="${categoryList}">
-									<option><c:set var="cat1" value="${cat}"/><c:out value="${cat1.prod_Category }"/></option>
+									<option><c:set var="cat1" value="${cat}"/><c:out value="${cat1.productCategory }"/></option>
 								 </c:forEach>
 			                 </select> 
 					</td>	
 					<td><input type="radio" id="brand" name="purchasereport" value="Brand">
-					  <label for="brand">Brand</label>
-							<select name="category.prod_Brand" id="prodbrand">
+					ï¿½ <label for="brand">Brand</label>
+							<select name="category.productBrand" id="prodbrand">
 			                     <option value="select"> Select </option>													
 								 <c:forEach var="cat" items="${categoryList}">
-									<option><c:set var="cat1" value="${cat}"/><c:out value="${cat1.prod_Brand }"/></option>
+									<option><c:set var="cat1" value="${cat}"/><c:out value="${cat1.productBrand }"/></option>
 								 </c:forEach>
 			                </select>
 					</td>		

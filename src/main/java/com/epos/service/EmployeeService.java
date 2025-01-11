@@ -18,8 +18,8 @@ public class EmployeeService {
 		return employeeRepo.save(emp);
     }
 
-    public Employee findByE_Id(long e_Id) {
-        return employeeRepo.findById(e_Id).get();
+    public Employee findByEmployeeId(long employeeId) {
+        return employeeRepo.findById(employeeId).get();
     }
 
     public List<Employee> findAllEmployees() {

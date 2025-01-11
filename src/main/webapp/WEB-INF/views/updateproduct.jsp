@@ -264,16 +264,16 @@
             <tr>
                <td> Name </td>
                <td>
-                  <input type="text" id="prodName" name="prodName">
+                  <input type="text" id="productName" name="productName">
                </td>
             </tr>
             <tr>
                <td> Category </td>
                <td>
-                  <select name="category.prodCategory" id="pordcategory">
+                  <select name="category.productCategory" id="pordcategory">
                      <option value="select"> Select </option>													
 					<c:forEach var="cat" items="${categoryList}">
-						<option><c:set var="cat1" value="${cat}"/><c:out value="${cat1.prodCategory }"/></option>
+						<option><c:set var="cat1" value="${cat}"/><c:out value="${cat1.productCategory }"/></option>
 					</c:forEach>
                   </select>
                </td>
@@ -281,10 +281,10 @@
             <tr>
                <td> Brand </td>
                <td>
-                  <select name="category.prodBrand" id="prodbrand">
+                  <select name="category.productBrand" id="productBrand">
                      <option value="select"> Select </option>													
 					 <c:forEach var="cat" items="${categoryList}">
-						<option><c:set var="cat1" value="${cat}"/><c:out value="${cat1.prodBrand }"/></option>
+						<option><c:set var="cat1" value="${cat}"/><c:out value="${cat1.productBrand }"/></option>
 					 </c:forEach>
                   </select>
                </td>

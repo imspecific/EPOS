@@ -15,7 +15,4 @@ public class Category implements Serializable {
 
     private String productCategory;
     private String productBrand;
-
-    public Category(String productCategory, String productBrand) {
-    }
 }

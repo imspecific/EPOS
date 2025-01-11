@@ -237,20 +237,20 @@
 		    		<h2>Add Store</tr>
 		    	</tr>
 				<tr>
-					<td>Store Id	</td><td> <input type="text" name="store_Id" placeholder="Auto Generated" disabled></td>
-					<td>Name  </td><td> <input type="text" name="store_Name"></td>
+					<td>Store Id	</td><td> <input type="text" name="storeId" placeholder="Auto Generated" disabled></td>
+					<td>Name  </td><td> <input type="text" name="storeName"></td>
 		    	</tr>
 				<tr>
-			    	<td>Phone No.  </td><td> <input type="text" name="store_Phone"></td>
-			    	<td rowspan="2">Address 	</td><td rowspan="5"> <textarea name="store_Add" rows="10" cols="2"></textarea></td>
+			    	<td>Phone No.  </td><td> <input type="text" name="storePhone"></td>
+			    	<td rowspan="2">Address 	</td><td rowspan="5"> <textarea name="storeAddress" rows="10" cols="2"></textarea></td>
 		    	</tr>
 		    	<tr>
-			    	<td>Email 	</td><td><input type="email" name="store_Email"></td>
+			    	<td>Email 	</td><td><input type="email" name="storeEmail"></td>
 		    	</tr>
 		    	<tr>
 			    	<td>Country	</td>
 			    	<td> 
-				    	<select name="user" id="store_Country">
+				    	<select name="user" id="storeCountry">
 	                     	<option value="null"> Select </option>
 	                     	<option value="ind"> India </option>
 	                     	<option value="uk"> UK </option>

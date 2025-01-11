@@ -250,7 +250,7 @@
 		            <tr>
 		               <td>Store Id </td>
 		               <td>
-		                  <input type="text" name="store_Id" id="store_Id">
+		                  <input type="text" name="storeId" id="storeId">
 		               </td>
 		               <td> Supplier ID </td>
 		               <td>
@@ -271,7 +271,7 @@
 		            <tr>
 		               <td> Product Id </td>
 		               <td>
-		                  <select name="user" id="prod_Id" id="prod_Id">
+		                  <select name="user" id="productId" id="productId">
 		                     <option value="select"> Select </option>
 		                  </select>
 		               </td>

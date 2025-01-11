@@ -213,17 +213,17 @@
 							<select name="employees" id="empList">
 								<option value="0"> Select </option>													
 								<c:forEach var="emp" items="${empList}">
-				        			<option><c:set var="emp1" value="${emp}"/><c:out value="${emp1.e_Id }"/></option>
+				        			<option><c:set var="emp1" value="${emp}"/><c:out value="${emp1.employeeId }"/></option>
 				    			</c:forEach>
 							</select>
 					</td>
 					<td>
-						  <input type="radio" id="name" name="resetpassword" value="Name">
-						  <label for="name"> Name </label>
+						ï¿½ <input type="radio" id="name" name="resetpassword" value="Name">
+						ï¿½ <label for="name"> Name </label>
 								 <select>
 								  	<option value="select"> Select </option>													
 									<c:forEach var="emp" items="${empList}">
-        								<option><c:set var="emp1" value="${emp}"/><c:out value="${emp1.e_Name }"/></option>
+        								<option><c:set var="emp1" value="${emp}"/><c:out value="${emp1.employeeName }"/></option>
     								</c:forEach>
 								  </select>	    			
 		    		</td>

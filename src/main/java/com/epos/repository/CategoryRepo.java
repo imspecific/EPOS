@@ -6,7 +6,7 @@ import com.epos.model.Category;
 
 public interface CategoryRepo {
 
-	int save(Category category);
+	int save(String productCategory, String productBrand);
 	
 	List<Category> findAllCategory();
 }

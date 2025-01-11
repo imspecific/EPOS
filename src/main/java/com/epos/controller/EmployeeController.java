@@ -4,6 +4,7 @@ import com.epos.model.Employee;
 import com.epos.model.Store;
 import com.epos.service.EmployeeService;
 import com.epos.service.StoreService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+@Slf4j
 @Controller
 public class EmployeeController {
 
@@ -57,7 +59,7 @@ public class EmployeeController {
         model.addAttribute("emp", emp);
         model.addAttribute("userName", emp.getEmployeeName());
         empService.addEmployee(emp);
-        System.out.println("Employee added successfully.");
+        log.info("Employee added successfully.");
         return "redirect:/adminhome";
     }
 
@@ -79,7 +81,7 @@ public class EmployeeController {
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity search(@RequestParam("emp1") Long employeeId, Model model) {
-        Employee emp = empService.findByE_Id(employeeId);
+        Employee emp = empService.findByEmployeeId(employeeId);
 
         model.addAttribute("employee", emp);
         return ResponseEntity.ok(emp);
@@ -88,7 +90,7 @@ public class EmployeeController {
     @RequestMapping(value = "/updateemployee", method = RequestMethod.POST)
     public String updateEmployee(@ModelAttribute("employee") Employee emp, Model model) {
         empService.addEmployee(emp);
-        System.out.println("Employee updated successfully.");
+        log.info("Employee updated successfully.");
         return "redirect:/adminhome";
     }
 
@@ -102,6 +104,6 @@ public class EmployeeController {
     @RequestMapping(value = "/loadEmployeeByE_Id", method = RequestMethod.GET)
     @ResponseBody
     public Employee loadEmployeeByE_Id(@RequestParam("empList") long employeeId) {
-        return empService.findByE_Id(employeeId);
+        return empService.findByEmployeeId(employeeId);
     }
 }
