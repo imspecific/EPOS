@@ -11,10 +11,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -41,12 +41,12 @@ public class EmployeeController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 
-    @RequestMapping(value = "/adminhome", method = RequestMethod.GET)
+    @GetMapping(value = "/adminhome")
     public ModelAndView adminHomeView(Model model) {
         return new ModelAndView("/adminhome");
     }
 
-    @RequestMapping(value = "/addemployee", method = RequestMethod.GET)
+    @GetMapping(value = "/addemployee")
     public ModelAndView addEmployeeView(@ModelAttribute("employee") Employee emp, Model model) {
         model.addAttribute("userName", emp.getEmployeeName());
         List<Store> storeList = storeService.allStore();
@@ -54,7 +54,7 @@ public class EmployeeController {
         return new ModelAndView("addemployee");
     }
 
-    @RequestMapping(value = "/addemployee", method = RequestMethod.POST)
+    @PostMapping(value = "/addemployee")
     public String addEmployee(@ModelAttribute("employee") Employee emp, Model model) {
         model.addAttribute("emp", emp);
         model.addAttribute("userName", emp.getEmployeeName());
@@ -63,7 +63,7 @@ public class EmployeeController {
         return "redirect:/adminhome";
     }
 
-    @RequestMapping(value = "/updateemployee", method = RequestMethod.GET)
+    @GetMapping(value = "/updateemployee")
     public ModelAndView updateEmployeeView(@ModelAttribute("employee") Employee emp, Model model) {
         model.addAttribute("userName", emp.getEmployeeName());
 
@@ -78,7 +78,7 @@ public class EmployeeController {
         return new ModelAndView("/updateemployee");
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    @GetMapping(value = "/search")
     @ResponseBody
     public ResponseEntity search(@RequestParam("emp1") Long employeeId, Model model) {
         Employee emp = empService.findByEmployeeId(employeeId);
@@ -87,21 +87,21 @@ public class EmployeeController {
         return ResponseEntity.ok(emp);
     }
 
-    @RequestMapping(value = "/updateemployee", method = RequestMethod.POST)
+    @PostMapping(value = "/updateemployee")
     public String updateEmployee(@ModelAttribute("employee") Employee emp, Model model) {
         empService.addEmployee(emp);
         log.info("Employee updated successfully.");
         return "redirect:/adminhome";
     }
 
-    @RequestMapping(value = "/resetpassword", method = RequestMethod.GET)
+    @GetMapping(value = "/resetpassword")
     public ModelAndView resetPassword(Model model) {
         List<Employee> empList = empService.findAllEmployees();
         model.addAttribute("empList", empList);
         return new ModelAndView("/resetpassword");
     }
 
-    @RequestMapping(value = "/loadEmployeeByE_Id", method = RequestMethod.GET)
+    @GetMapping(value = "/loadEmployeeByE_Id")
     @ResponseBody
     public Employee loadEmployeeByE_Id(@RequestParam("empList") long employeeId) {
         return empService.findByEmployeeId(employeeId);
